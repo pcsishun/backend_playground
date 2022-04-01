@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const CONNECTION_STRING = "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false"
+const CONNECTION_STRING = "mongodb://localhost:27017/thai_agro_innovative"
 
 exports.connect = () => {
 
