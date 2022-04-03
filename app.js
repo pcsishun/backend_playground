@@ -1,11 +1,61 @@
 const express = require("express");
 const cors = require("cors");
 const UserPlayground = require("./model/userplayground");
+const finding = require('local-devices');
+// const nmap = require('node-nmap');
+const os = require('os');
+const dns = require("dns");
+// const nmap = require('libnmap');
+// const nodePortScanner = require('node-port-scanner');
 
 const app = express();
 
 app.use(express.json());
 app.use(cors()); 
+
+// get network scaner 192.168.1.103 // 
+app.get("/scannetwork", async (req, res)=> {
+
+    // nmap.discover(function(err, report) {
+    //     for (let item in report) {
+    //       console.log(JSON.stringify(report[item]));
+    //     }
+    //   });
+    // const networkInterfaces = os.networkInterfaces();
+    // console.log(networkInterfaces);
+
+    // // nmap.nmapLocation = 'nmap'; 
+    // finding().then(devices => {
+    //     console.log(devices)
+    //   })
+    
+    // dns.lookup(require('os').hostname(), function (err, add, fam) {
+    //     console.log('addr: ' + add);
+    //   })
+
+    // function actionFunction(data){
+    //     console.log(data);
+    //     console.log("Percentage complete" + scan.percentComplete());
+    // }
+    // var osandports = new nmap.OsAndPortScan("192.168.1.106");
+     
+    // osandports.on('complete', function(data){
+    //     console.log(data);
+    //     console.log("total scan time" + scan.scanTime);
+    // });
+     
+    // osandports.on('error', function(error){
+    //   console.log(error);
+    // });
+     
+    // osandports.startRunScan();
+
+    // dns.reverse(req.connection.remoteAddress, function(err, domains) {
+    //     console.log(domains);
+    // });
+    
+    res.send("ok")
+});
 
 app.post("/userplayground", async (req, res) => {
     const { username,  password } = req.body;
